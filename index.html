@@ -3,9 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" integrity="sha512-t4GWSVZO1eC8BM339Xd7Uphw5s17a86tIZIj8qRxhnKub6WoyhnrxeCIMeAqBPgdZGlCcG2PrZjMc+Wr78+5Xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <title>CRUD Productos</title>
 </head>
 <body>
+
+  <header>
+    <nav class="navbar navbar-light bg-light">
+      <h3>CRUD Productos</h3>
+      <span class="navbar-brand mb-0 h1">Gestión de Inventario</span>
+    </nav>
   
+  </header>
+
+  <main class="container">
+    <section class="mt-4">
+      <h2 class="text-center">Lista de Productos</h2>
+      <div class="mb-3 text-end">
+        <button class="btn btn-primary" id="addProductBtn">Agregar Producto</button>
+      </div>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="productTableBody">
+          <!-- Los productos se cargarán aquí mediante JavaScript -->
+        </tbody>
+      </table>
+
+    </section>
+        
+  </main>
+    <!-- modales -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="productModalLabel">Agregar Producto</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="productForm">
+              <input type="hidden" id="productId">
+              <div class="mb-3">
+                <label for="productName" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="productName" required>
+               
+                <label for="productPrice" class="form-label">Precio</label>
+                <input type="number" class="form-control" id="productName" required>
+                <label for="productQuantity" class="form-label">Cantidad</label>
+                <input type="number" class="form-control" id="productQuantity" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+          </div>
+       </div>
+      </div>  
+    </div>
+
+    <!-- modal ver detalle -->
+    <div class="modal fade" id="productDetailModal" tabindex="-1" aria-labelledby="productDetailModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="productDetailModalLabel">Detalles del Producto</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="verDetalle">
+            <div class="row">
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <hr>
+    <footer>
+      <div class="text-center py-3">
+        <p>&copy; 2025 CRUD Productos. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha512-VK2zcvntEufaimc+efOYi622VN5ZacdnufnmX7zIhCPmjhKnOi9ZDMtg1/ug5l183f19gG1/cBstPO4D8N/Img==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./assets/js/app.js"></script>
 </body>
 </html>
